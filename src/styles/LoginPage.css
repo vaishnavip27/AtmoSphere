@@ -2,49 +2,59 @@ body {
   background-color: black;
 }
 
-.img-container {
-  border: 1px solid white;
-  width: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translate(89%, 200%);
-}
-
-.login-icon {
-  filter: drop-shadow(0 0 10px rgba(167, 243, 255, 0.826));
-}
-
 .text {
-  border: 1px solid white;
-  transform: translate(55%, 130%);
+  transform: translate(60%, 96%);
   height: 110px;
-  width: 800px;
-  margin-top: 10px;
+  width: 770px;
 }
 
 .head,
 .sub-head {
   color: white;
   height: auto;
-  /* height: 65px; */
   width: auto;
-  /* width: 800px; */
-  border: 1px solid white;
   text-align: center;
 }
 
 .head {
-  font-size: 37px;
+  font-size: 30px;
   font-weight: 700;
 }
 
 .sub-head {
-  margin-top: 16px;
-  font-size: 21px;
+  margin-top: 13px;
+  font-size: 19px;
   font-weight: 500;
 }
 
 .my-4 {
   height: 55px;
+}
+
+.login-button {
+  height: 56px;
+  width: 600px;
+  background-color: purple;
+  margin-top: 18px;
+  border-radius: 10px;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 68px;
+}
+
+.olw {
+  color: white;
+  font-size: 18px;
+  margin-left: 316px;
+  margin-top: 23px;
+}
+
+.text-center {
+  margin-left: 40px;
+}
+
+.logo-img {
+  margin-left: 180px;
 }

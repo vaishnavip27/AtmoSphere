@@ -1,21 +1,18 @@
 import React from "react";
 import "../styles/LoginPage.css";
-import loginIcon from "../pictures/login-icon.png";
 import { InputWithLabel } from "./InputWithLabel";
+import GoogleIcon from "../pictures/google-icon.png";
 
 export default function LoginPage() {
   return (
     <div>
-      <div className="img-container">
-        <img src={loginIcon} alt="Login Icon" className="login-icon" />
-      </div>
       <div className="text">
         <div className="head">Step into your AtmosSphere!</div>
         <div className="sub-head">
           Personalized weather insights for your world. Sign up and stay in tune
           with nature
         </div>
-        <form>
+        <form style={{ marginLeft: "70px" }}>
           <InputWithLabel
             label="Email"
             type="email"
@@ -29,7 +26,47 @@ export default function LoginPage() {
             id="password"
             placeholder="Password"
           />
+
+          <label style={{ color: "white" }}>
+            <input
+              type="checkbox"
+              value="option1"
+              checked={true}
+              style={{
+                width: "17px",
+                height: "17px",
+                marginTop: "24px",
+                marginRight: "8px",
+              }}
+            />
+            Remember me
+          </label>
         </form>
+        <button type="submit" className="login-button">
+          Log In
+        </button>
+        <div className="olw">Or login with</div>
+        <button
+          style={{
+            display: "flex",
+            alignItems: "center",
+            border: "1px solid white",
+            width: "600px",
+            height: "58px",
+            marginLeft: "70px",
+            marginTop: "24px",
+          }}
+        >
+          <img
+            className="logo-img"
+            src={GoogleIcon}
+            alt="Logo"
+            style={{ marginRight: "10px", height: "32px", width: "32px" }}
+          />
+          <span className="b-text" style={{ color: "white" }}>
+            Sign up with google
+          </span>
+        </button>
       </div>
     </div>
   );
