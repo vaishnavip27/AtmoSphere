@@ -5,7 +5,7 @@ export function InputWithLabel({ label, type, ...otherProps }) {
   return (
     <div className="grid w-full max-w-sm items-center gap-1.5">
       <Label
-        htmlFor="{ptherProps.id}"
+        htmlFor="{otherProps.id}"
         style={{ color: "white", fontSize: "20px", marginTop: "26px" }}
       >
         {label}

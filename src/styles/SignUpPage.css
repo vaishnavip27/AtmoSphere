@@ -1,0 +1,61 @@
+body {
+  background-color: black;
+}
+
+.text {
+  transform: translate(60%, 96%);
+  height: 110px;
+  width: 770px;
+}
+
+.head,
+.sub-head {
+  color: white;
+  height: auto;
+  width: auto;
+  text-align: center;
+}
+
+.head {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.sub-head {
+  margin-top: 13px;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.login {
+  color: white;
+  margin-left: 210px;
+  display: block;
+  width: 350px;
+  margin-top: 18px;
+}
+
+.login-link {
+  color: rgb(178, 0, 227);
+  text-decoration: underline;
+}
+
+.sign-button {
+  height: 57px;
+  width: 600px;
+  background-color: blueviolet;
+  margin-left: 70px;
+  margin-top: 26px;
+  border-radius: 10px;
+  color: white;
+}
+
+.sign-button:hover {
+  background-color: rgb(165, 93, 232);
+}
+
+.or {
+  color: white;
+  margin-left: 364px;
+  margin-top: 12px;
+}

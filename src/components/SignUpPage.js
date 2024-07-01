@@ -1,10 +1,10 @@
 import React from "react";
-import "../styles/LoginPage.css";
+import "../styles/SignUpPage.css";
+import { Link } from "react-router-dom";
 import { InputWithLabel } from "./InputWithLabel";
 import GoogleIcon from "../pictures/google-icon.png";
-import { Link } from "react-router-dom";
 
-export default function LoginPage() {
+function SignUpPage() {
   return (
     <div>
       <div className="text">
@@ -13,40 +13,34 @@ export default function LoginPage() {
           Personalized weather insights for your world. Sign up and stay in tune
           with nature
         </div>
+
         <form style={{ marginLeft: "70px" }}>
           <InputWithLabel
-            label="Email"
-            type="email"
-            id="email"
-            placeholder="Email"
+            label="Name"
+            type="text"
+            id="text"
+            placeholder="Your name"
+          />
+
+          <InputWithLabel
+            label="Email or phone number"
+            type="password"
+            id="password"
+            placeholder="Your email address or phone number"
           />
 
           <InputWithLabel
             label="Password"
             type="password"
             id="password"
-            placeholder="Password"
+            placeholder="Create password"
           />
-
-          <label style={{ color: "white" }}>
-            <input
-              type="checkbox"
-              value="option1"
-              checked={true}
-              style={{
-                width: "17px",
-                height: "17px",
-                marginTop: "24px",
-                marginRight: "8px",
-              }}
-            />
-            Remember me
-          </label>
         </form>
-        <button type="submit" className="login-button">
-          Log In
+
+        <button type="submit" className="sign-button">
+          Sign up
         </button>
-        <div className="olw">Or login with</div>
+        <div className="or">or</div>
         <button
           style={{
             display: "flex",
@@ -55,7 +49,7 @@ export default function LoginPage() {
             width: "600px",
             height: "58px",
             marginLeft: "70px",
-            marginTop: "24px",
+            marginTop: "15px",
           }}
         >
           <img
@@ -69,13 +63,15 @@ export default function LoginPage() {
           </span>
         </button>
 
-        <span className="sign">
-          Don't have an account ?{" "}
-          <Link to="/signup" className="registerLink">
-            Register here
+        <span class="login">
+          If you already have an account,
+          <Link to="/login" className="login-link">
+            Log in
           </Link>
         </span>
       </div>
     </div>
   );
 }
+
+export default SignUpPage;
