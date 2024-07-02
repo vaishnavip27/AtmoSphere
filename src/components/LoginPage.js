@@ -3,8 +3,34 @@ import "../styles/LoginPage.css";
 import { InputWithLabel } from "./InputWithLabel";
 import GoogleIcon from "../pictures/google-icon.png";
 import { Link } from "react-router-dom";
+import {
+  doSignInWithEmailAndPassword,
+  doSignInWithGoogle,
+} from "../firebase/auth";
+import { useAuth } from "../contexts/authContext";
 
 export default function LoginPage() {
+  const { userLoggedIn } = useAuth();
+
+  const [email, setEmail] = useState("");
+  const [password, setpassword] = useState("");
+  const [isSigningIn, setIsSigningIn] = useState(false);
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    if (!isSigningIn) {
+      setIsSigningIn(true);
+      await doSignInWithEmailAndPassword(email, password);
+    }
+  };
+
+  const onGoogleSignIn = (e) => {
+    e.preventDefault();
+    if (!isSigningIn) {
+      setIsSigningIn(true);
+      doSignInWithGoogle().catch;
+    }
+  };
   return (
     <div>
       <div className="text">
