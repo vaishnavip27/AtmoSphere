@@ -3,34 +3,8 @@ import "../styles/LoginPage.css";
 import { InputWithLabel } from "./InputWithLabel";
 import GoogleIcon from "../pictures/google-icon.png";
 import { Link } from "react-router-dom";
-import {
-  doSignInWithEmailAndPassword,
-  doSignInWithGoogle,
-} from "../firebase/auth";
-import { useAuth } from "../contexts/authContext";
 
 export default function LoginPage() {
-  const { userLoggedIn } = useAuth();
-
-  const [email, setEmail] = useState("");
-  const [password, setpassword] = useState("");
-  const [isSigningIn, setIsSigningIn] = useState(false);
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    if (!isSigningIn) {
-      setIsSigningIn(true);
-      await doSignInWithEmailAndPassword(email, password);
-    }
-  };
-
-  const onGoogleSignIn = (e) => {
-    e.preventDefault();
-    if (!isSigningIn) {
-      setIsSigningIn(true);
-      doSignInWithGoogle().catch;
-    }
-  };
   return (
     <div>
       <div className="text">
@@ -58,7 +32,7 @@ export default function LoginPage() {
             <input
               type="checkbox"
               value="option1"
-              checked={true}
+              defaultChecked={true}
               style={{
                 width: "17px",
                 height: "17px",
@@ -68,10 +42,12 @@ export default function LoginPage() {
             />
             Remember me
           </label>
+
+          <button type="submit" className="login-button">
+            Log In
+          </button>
         </form>
-        <button type="submit" className="login-button">
-          Log In
-        </button>
+
         <div className="olw">Or login with</div>
         <button
           style={{
@@ -91,12 +67,12 @@ export default function LoginPage() {
             style={{ marginRight: "10px", height: "32px", width: "32px" }}
           />
           <span className="b-text" style={{ color: "white" }}>
-            Sign up with google
+            Sign up with Google
           </span>
         </button>
 
         <span className="sign">
-          Don't have an account ?{" "}
+          Don't have an account?{" "}
           <Link to="/signup" className="registerLink">
             Register here
           </Link>
