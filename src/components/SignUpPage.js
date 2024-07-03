@@ -1,32 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/SignUpPage.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { InputWithLabel } from "./InputWithLabel";
 import GoogleIcon from "../pictures/google-icon.png";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, db } from "./firebase";
+import { setDoc, doc } from "firebase/firestore";
 
 function SignUpPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [fname, setFname] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    setError("");
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      await setDoc(doc(db, "Users", user.uid), {
+        email: user.email,
+        name: fname,
+      });
+      console.log("User logged in successfully");
+      navigate("/login"); // Redirect to login page after successful registration
+    } catch (error) {
+      setError(error.message);
+      console.error("Error registering user:", error);
+    }
+  };
+
   return (
     <div>
       <div className="text">
         <div className="head">Step into your AtmosSphere!</div>
-        <div className="sub-head">
-          Personalized weather insights for your world. Sign up and stay in tune
-          with nature
-        </div>
 
-        <form style={{ marginLeft: "70px" }}>
+        <form onSubmit={handleRegister} style={{ marginLeft: "70px" }}>
           <InputWithLabel
             label="Name"
             type="text"
             id="text"
             placeholder="Your name"
+            value={fname}
+            onChange={(e) => setFname(e.target.value)}
+            required
           />
 
           <InputWithLabel
             label="Email or phone number"
-            type="password"
-            id="password"
+            type="email"
+            id="email"
             placeholder="Your email address or phone number"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
           />
 
           <InputWithLabel
@@ -34,12 +67,18 @@ function SignUpPage() {
             type="password"
             id="password"
             placeholder="Create password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
           />
+
+          {error && <p style={{ color: "red" }}>{error}</p>}
+
+          <button type="submit" className="sign-button">
+            Sign up
+          </button>
         </form>
 
-        <button type="submit" className="sign-button">
-          Sign up
-        </button>
         <div className="or">or</div>
         <button
           style={{
@@ -59,11 +98,11 @@ function SignUpPage() {
             style={{ marginRight: "10px", height: "32px", width: "32px" }}
           />
           <span className="b-text" style={{ color: "white" }}>
-            Sign up with google
+            Sign up with Google
           </span>
         </button>
 
-        <span class="login">
+        <span className="login">
           If you already have an account,
           <Link to="/login" className="login-link">
             Log in

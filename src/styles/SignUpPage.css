@@ -21,12 +21,6 @@ body {
   font-weight: 700;
 }
 
-.sub-head {
-  margin-top: 13px;
-  font-size: 19px;
-  font-weight: 500;
-}
-
 .login {
   color: white;
   margin-left: 210px;
@@ -44,7 +38,6 @@ body {
   height: 57px;
   width: 600px;
   background-color: blueviolet;
-  margin-left: 70px;
   margin-top: 26px;
   border-radius: 10px;
   color: white;

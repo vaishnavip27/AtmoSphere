@@ -3,28 +3,22 @@ body {
 }
 
 .text {
-  transform: translate(60%, 96%);
   height: 110px;
+  transform: translate(60%, 96%);
   width: 770px;
 }
 
-.head,
-.sub-head {
+.head {
   color: white;
   height: auto;
   width: auto;
   text-align: center;
+  margin-left: -108px;
 }
 
 .head {
   font-size: 30px;
   font-weight: 700;
-}
-
-.sub-head {
-  margin-top: 13px;
-  font-size: 19px;
-  font-weight: 500;
 }
 
 .my-4 {

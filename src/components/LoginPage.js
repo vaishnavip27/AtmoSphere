@@ -1,38 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/LoginPage.css";
 import { InputWithLabel } from "./InputWithLabel";
 import GoogleIcon from "../pictures/google-icon.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "./firebase";
 
 export default function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(true);
+  const navigate = useNavigate(); //import useNavigate hook
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      console.log("User logged in successfully:", userCredential);
+      navigate("/dashboard");
+      // Handle successful login (e.g., redirect to protected routes)
+    } catch (error) {
+      console.error("Login error:", error);
+      // Handle login errors (e.g., display error message to the user)
+    }
+  };
+
+  const handleGoogleSignIn = () => {
+    console.log("Google sign-in attempted");
+  };
+
   return (
     <div>
       <div className="text">
-        <div className="head">Step into your AtmosSphere!</div>
-        <div className="sub-head">
-          Personalized weather insights for your world. Sign up and stay in tune
-          with nature
-        </div>
-        <form style={{ marginLeft: "70px" }}>
+        <form onSubmit={handleSubmit} style={{ marginLeft: "70px" }}>
+          <div className="head">Step into your AtmosSphere!</div>
           <InputWithLabel
             label="Email"
             type="email"
             id="email"
             placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <InputWithLabel
             label="Password"
             type="password"
             id="password"
-            placeholder="Password"
+            value={password}
+            placeholder="Enter password"
+            onChange={(e) => setPassword(e.target.value)}
           />
 
           <label style={{ color: "white" }}>
             <input
               type="checkbox"
-              value="option1"
-              defaultChecked={true}
+              checked={rememberMe}
+              onChange={(e) => setRememberMe(e.target.checked)}
               style={{
                 width: "17px",
                 height: "17px",
@@ -50,6 +78,8 @@ export default function LoginPage() {
 
         <div className="olw">Or login with</div>
         <button
+          className="logo-img"
+          onClick={handleGoogleSignIn}
           style={{
             display: "flex",
             alignItems: "center",
@@ -61,7 +91,6 @@ export default function LoginPage() {
           }}
         >
           <img
-            className="logo-img"
             src={GoogleIcon}
             alt="Logo"
             style={{ marginRight: "10px", height: "32px", width: "32px" }}
