@@ -1,6 +1,10 @@
 import React from "react";
 import "../styles/Dashboard.css";
 
-export const Dashboard = () => {
-  return <div className="yes">Hey, this is the dashboard</div>;
-};
+export default function Dashboard() {
+  return (
+    <div>
+      <h1 className="yes">Hey, this is the dashboard!</h1>
+    </div>
+  );
+}
