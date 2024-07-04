@@ -1,3 +1,44 @@
-.yes {
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  height: 380px;
+  max-width: 650px;
+  width: 90%;
+  background-color: grey;
+  border-radius: 12px;
+  transform: translate(0%, 58%);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.head {
+  font-size: 25px;
+  border: 1px solid white;
+  max-width: 610px;
+  transform: translate(10%, -180%);
+  margin-top: 42px;
+}
+
+.joke {
+  max-width: 610px;
+  border: 1px solid white;
   color: white;
+  font-size: 19px;
+  transform: translate(0%, -20%);
+}
+
+button {
+  height: 50px;
+  width: 150px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 19px;
+  margin-top: 15px;
+  margin-left: 380px;
 }
