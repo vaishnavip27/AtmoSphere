@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 import "../styles/LoginPage.css";
 import { InputWithLabel } from "./InputWithLabel";
+import GenieIcon from "../pictures/genie.png";
 import GoogleIcon from "../pictures/google-icon.png";
 import { Link, useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "./firebase";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth, googleProvider, db } from "./firebase";
+import { doc, setDoc, getDoc } from "firebase/firestore";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(true);
-  const navigate = useNavigate(); //import useNavigate hook
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
     try {
       const userCredential = await signInWithEmailAndPassword(
         auth,
@@ -22,22 +26,78 @@ export default function LoginPage() {
       );
       console.log("User logged in successfully:", userCredential);
       navigate("/dashboard");
-      // Handle successful login (e.g., redirect to protected routes)
     } catch (error) {
       console.error("Login error:", error);
-      // Handle login errors (e.g., display error message to the user)
+      setError("Failed to log in. Please check your email and password.");
     }
   };
 
-  const handleGoogleSignIn = () => {
-    console.log("Google sign-in attempted");
+  const handleGoogleSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+
+      // Check if user exists in Firestore
+      const userDoc = await getDoc(doc(db, "Users", user.uid));
+
+      if (!userDoc.exists()) {
+        // If user doesn't exist, create a new document
+        await setDoc(doc(db, "Users", user.uid), {
+          email: user.email,
+          name: user.displayName,
+        });
+      }
+
+      console.log("User logged in successfully with Google:", user);
+      navigate("/dashboard");
+    } catch (error) {
+      console.error("Google sign-in error:", error);
+      setError("Failed to sign in with Google. Please try again.");
+    }
   };
 
   return (
-    <div>
-      <div className="text">
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "flex-end",
+        flexDirection: "column",
+        marginLeft: "470px",
+        height: "630px",
+        width: "700px",
+        marginTop: "100px",
+      }}
+    >
+      <div
+        className="head-container"
+        style={{ transform: "translate(0%,-50%)", display: "flex" }}
+      >
+        <img
+          src={GenieIcon}
+          alt="head-icon"
+          style={{
+            marginRight: "24px",
+            height: "45px",
+            width: "45px",
+            transform: "translateX(12px)",
+          }}
+          className="logo-img"
+        />
+        <span
+          className="c-text"
+          style={{
+            color: "white",
+            fontSize: "30px",
+            fontWeight: "600",
+            marginTop: "3px",
+            transform: "translateX(8px)",
+          }}
+        >
+          GiggleGenie
+        </span>
+      </div>
+      <div class="form-container">
         <form onSubmit={handleSubmit} style={{ marginLeft: "70px" }}>
-          <div className="head">Step into your AtmosSphere!</div>
           <InputWithLabel
             label="Email"
             type="email"
@@ -45,6 +105,8 @@ export default function LoginPage() {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            style={{ marginLeft: "28px" }}
+            required
           />
 
           <InputWithLabel
@@ -54,22 +116,33 @@ export default function LoginPage() {
             value={password}
             placeholder="Enter password"
             onChange={(e) => setPassword(e.target.value)}
+            style={{ marginLeft: "20px" }}
           />
 
-          <label style={{ color: "white" }}>
+          <label
+            style={{
+              display: "flex",
+              alignItems: "center",
+              color: "white",
+              fontSize: "17px",
+              marginLeft: "59px",
+              marginTop: "24px",
+            }}
+          >
             <input
               type="checkbox"
               checked={rememberMe}
               onChange={(e) => setRememberMe(e.target.checked)}
               style={{
-                width: "17px",
-                height: "17px",
-                marginTop: "24px",
-                marginRight: "8px",
+                width: "20px",
+                height: "20px",
+                marginRight: "12px",
               }}
             />
             Remember me
           </label>
+
+          {error && <p style={{ color: "red" }}>{error}</p>}
 
           <button type="submit" className="login-button">
             Log In
@@ -77,6 +150,7 @@ export default function LoginPage() {
         </form>
 
         <div className="olw">Or login with</div>
+
         <button
           className="logo-img"
           onClick={handleGoogleSignIn}
@@ -84,19 +158,22 @@ export default function LoginPage() {
             display: "flex",
             alignItems: "center",
             border: "1px solid white",
-            width: "600px",
-            height: "58px",
-            marginLeft: "70px",
-            marginTop: "24px",
+            width: "520px",
+            height: "54px",
+            transform: "translate(-14%,0%)",
           }}
         >
           <img
             src={GoogleIcon}
             alt="Logo"
-            style={{ marginRight: "10px", height: "32px", width: "32px" }}
+            style={{ marginRight: "24px", height: "28px", width: "28px" }}
+            className="logo-img"
           />
-          <span className="b-text" style={{ color: "white" }}>
-            Sign up with Google
+          <span
+            className="b-text"
+            style={{ color: "white", fontSize: "17px", marginRight: "8px" }}
+          >
+            Sign in with Google
           </span>
         </button>
 

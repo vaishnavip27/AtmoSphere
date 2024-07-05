@@ -1,32 +1,22 @@
 body {
   background-color: black;
+  overflow-x: hidden;
 }
 
-.text {
-  transform: translate(60%, 96%);
-  height: 110px;
-  width: 770px;
-}
-
-.head,
-.sub-head {
-  color: white;
-  height: auto;
-  width: auto;
-  text-align: center;
-}
-
-.head {
-  font-size: 30px;
-  font-weight: 700;
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(8%, -4%);
 }
 
 .login {
   color: white;
-  margin-left: 210px;
+  margin-left: -10px;
   display: block;
-  width: 350px;
-  margin-top: 18px;
+  width: 340px;
+  margin-top: 22px;
+  font-size: 17px;
 }
 
 .login-link {
@@ -35,12 +25,14 @@ body {
 }
 
 .sign-button {
-  height: 57px;
-  width: 600px;
+  height: 54px;
+  width: 520px;
   background-color: blueviolet;
   margin-top: 26px;
   border-radius: 10px;
+  font-size: 18px;
   color: white;
+  transform: translate(-27%, 22%);
 }
 
 .sign-button:hover {
@@ -49,6 +41,14 @@ body {
 
 .or {
   color: white;
-  margin-left: 364px;
-  margin-top: 12px;
+  transform: translate(-40%, 1%);
+  margin-top: 24px;
+}
+
+.logo-img {
+  margin-left: 138px;
+}
+
+button {
+  margin-left: 198px;
 }
