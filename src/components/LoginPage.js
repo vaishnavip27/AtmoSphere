@@ -125,7 +125,7 @@ export default function LoginPage() {
               alignItems: "center",
               color: "white",
               fontSize: "17px",
-              marginLeft: "59px",
+              marginLeft: "156px",
               marginTop: "24px",
             }}
           >

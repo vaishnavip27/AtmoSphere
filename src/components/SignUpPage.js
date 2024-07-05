@@ -153,7 +153,7 @@ function SignUpPage() {
             border: "1px solid white",
             width: "520px",
             height: "54px",
-            transform: "translate(-20%,0%)",
+            transform: "translate(-36%,0%)",
           }}
         >
           <img

@@ -10,7 +10,7 @@ export function InputWithLabel({ label, type, ...otherProps }) {
           color: "white",
           fontSize: "17px",
           marginTop: "26px",
-          marginLeft: "58px",
+          marginLeft: "158px",
         }}
       >
         {label}
@@ -18,7 +18,7 @@ export function InputWithLabel({ label, type, ...otherProps }) {
       <Input
         type={type}
         {...otherProps}
-        style={{ height: "54px", width: "520px", marginLeft: "58px" }}
+        style={{ height: "54px", width: "520px", marginLeft: "158px" }}
       />
     </div>
   );
