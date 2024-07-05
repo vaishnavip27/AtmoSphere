@@ -27,7 +27,7 @@ body {
   font-size: 18px;
   cursor: pointer;
   font-weight: 600;
-  transform: translate(-43%, 22%);
+  transform: translate(-4%, 48%);
 }
 
 .login-button:hover {
@@ -37,13 +37,14 @@ body {
 .olw {
   color: white;
   font-size: 17px;
-  margin-top: 28px;
+  margin-top: 48px;
 }
 
 .sign {
   color: white;
   font-size: 17px;
-  margin-top: 22px;
+  padding-top: 28px;
+  margin-top: 12px;
   display: block;
   width: 330px;
 }

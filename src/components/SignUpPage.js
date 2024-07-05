@@ -72,7 +72,7 @@ function SignUpPage() {
         marginLeft: "470px",
         width: "700px",
         height: "700px",
-        marginTop: "70px",
+        marginTop: "40px",
       }}
     >
       <div
@@ -153,7 +153,7 @@ function SignUpPage() {
             border: "1px solid white",
             width: "520px",
             height: "54px",
-            transform: "translate(-36%,0%)",
+            transform: "translate(2%,16%)",
           }}
         >
           <img

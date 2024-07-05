@@ -125,8 +125,9 @@ export default function LoginPage() {
               alignItems: "center",
               color: "white",
               fontSize: "17px",
-              marginLeft: "156px",
-              marginTop: "24px",
+              transform: "translate(-4%,90%)",
+              // marginLeft: "150px",
+              // marginTop: "24px",
             }}
           >
             <input
@@ -160,7 +161,7 @@ export default function LoginPage() {
             border: "1px solid white",
             width: "520px",
             height: "54px",
-            transform: "translate(-14%,0%)",
+            transform: "translate(-11%,34%)",
           }}
         >
           <img

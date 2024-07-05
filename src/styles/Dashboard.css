@@ -3,31 +3,38 @@ body {
 }
 
 .container {
-  height: 380px;
+  height: 420px;
   max-width: 650px;
   width: 90%;
-  background-color: grey;
+  background-color: rgb(22, 22, 22);
   border-radius: 12px;
-  transform: translate(0%, 58%);
+  transform: translate(-0%, 48%);
   padding: 3rem;
   display: flex;
   flex-direction: column;
+  border: 1px solid rgb(145, 145, 145);
 }
 
 .head {
   font-size: 25px;
-  border: 1px solid white;
   max-width: 610px;
-  transform: translate(10%, -180%);
+  transform: translate(-0%, -120%);
   margin-top: 42px;
+  color: white;
+  text-align: center;
+  font-weight: 700;
 }
 
 .joke {
+  height: 160px;
   max-width: 610px;
-  border: 1px solid white;
   color: white;
   font-size: 19px;
-  transform: translate(0%, -20%);
+  transform: translate(0%, -6%);
+  background-color: rgb(91, 91, 91);
+  border-radius: 8px;
+  padding: 18px;
+  font-weight: 400;
 }
 
 button {
@@ -39,6 +46,5 @@ button {
   border-radius: 10px;
   font-weight: 500;
   font-size: 19px;
-  margin-top: 15px;
-  margin-left: 380px;
+  transform: translate(122%, 38%);
 }
