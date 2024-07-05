@@ -167,7 +167,7 @@ export default function LoginPage() {
           <img
             src={GoogleIcon}
             alt="Logo"
-            style={{ marginRight: "24px", height: "28px", width: "28px" }}
+            style={{ marginRight: "24px", height: "26px", width: "26px" }}
             className="logo-img"
           />
           <span

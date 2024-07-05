@@ -19,7 +19,7 @@ body {
   font-size: 25px;
   max-width: 610px;
   transform: translate(-0%, -120%);
-  margin-top: 42px;
+  margin-top: 32px;
   color: white;
   text-align: center;
   font-weight: 700;
@@ -37,14 +37,35 @@ body {
   font-weight: 400;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
 button {
-  height: 50px;
-  width: 150px;
-  background-color: black;
-  color: white;
+  padding: 14px 68px;
+  font-size: 16px;
   cursor: pointer;
-  border-radius: 10px;
-  font-weight: 500;
-  font-size: 19px;
-  transform: translate(122%, 38%);
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(127, 0, 201);
+  color: white;
+  display: flex;
+  align-items: center;
+  transform: translateY(22px);
+}
+
+button:hover {
+  background-color: rgb(67, 2, 105);
+}
+
+button:focus {
+  outline: none;
+}
+
+.twitter-icon {
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+  margin-right: 8px;
 }

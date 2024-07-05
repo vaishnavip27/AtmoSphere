@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/Dashboard.css";
 import { auth, db } from "./firebase";
 import { doc, getDoc } from "firebase/firestore";
+import twitterIcon from "../pictures/twitter-logo.png";
 
 export default function Dashboard() {
   const [userName, setUserName] = useState("");
@@ -50,7 +51,13 @@ export default function Dashboard() {
     <div className="container">
       <div className="head">Hey {userName}, here is your joke</div>
       <div className="joke">{joke}</div>
-      <button onClick={fetchJoke}>Get a joke</button>
+      <div className="button-container">
+        <button onClick={fetchJoke}>Get a joke</button>
+        <button>
+          <img src={twitterIcon} alt="Twitter" className="twitter-icon" /> Post
+          it on Twitter
+        </button>
+      </div>
     </div>
   );
 }

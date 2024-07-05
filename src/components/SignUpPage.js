@@ -160,7 +160,7 @@ function SignUpPage() {
             className="logo-img"
             src={GoogleIcon}
             alt="Logo"
-            style={{ marginRight: "19px", height: "28px", width: "28px" }}
+            style={{ marginRight: "19px", height: "26px", width: "26px" }}
           />
           <span
             className="b-text"
