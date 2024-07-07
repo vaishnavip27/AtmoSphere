@@ -150,14 +150,16 @@ function SignUpPage() {
           style={{
             display: "flex",
             alignItems: "center",
+            justifyContent: "center",
             border: "1px solid white",
             width: "520px",
             height: "54px",
             transform: "translate(2%,16%)",
+            backgroundColor: "black",
           }}
         >
           <img
-            className="logo-img"
+            className="logo-image"
             src={GoogleIcon}
             alt="Logo"
             style={{ marginRight: "19px", height: "26px", width: "26px" }}

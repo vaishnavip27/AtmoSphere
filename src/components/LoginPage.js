@@ -158,22 +158,21 @@ export default function LoginPage() {
           style={{
             display: "flex",
             alignItems: "center",
+            justifyContent: "center",
             border: "1px solid white",
             width: "520px",
             height: "54px",
             transform: "translate(-11%,34%)",
+            backgroundColor: "black",
           }}
         >
           <img
             src={GoogleIcon}
             alt="Logo"
-            style={{ marginRight: "24px", height: "26px", width: "26px" }}
+            style={{ marginRight: "16px", height: "26px", width: "26px" }}
             className="logo-img"
           />
-          <span
-            className="b-text"
-            style={{ color: "white", fontSize: "17px", marginRight: "8px" }}
-          >
+          <span className="b-text" style={{ color: "white", fontSize: "17px" }}>
             Sign in with Google
           </span>
         </button>

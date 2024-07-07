@@ -32,6 +32,8 @@ body {
   font-size: 18px;
   color: white;
   transform: translate(-4%, 22%);
+  font-weight: 600;
+  text-align: center;
 }
 
 .sign-button:hover {
@@ -46,4 +48,8 @@ body {
 
 .logo-img {
   margin-left: 138px;
+}
+
+.login-image {
+  margin-left: 12px;
 }

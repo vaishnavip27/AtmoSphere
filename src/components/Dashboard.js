@@ -47,13 +47,20 @@ export default function Dashboard() {
     }
   };
 
+  const postTotwitter = () => {
+    const tweetText = encodeURIComponent(
+      `${joke}\n\n~ GiggleGenie made by Vaishnavi`
+    );
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
+    window.open(twitterUrl, "_blank");
+  };
   return (
     <div className="container">
       <div className="head">Hey {userName}, here is your joke</div>
       <div className="joke">{joke}</div>
       <div className="button-container">
         <button onClick={fetchJoke}>Get a joke</button>
-        <button>
+        <button onClick={postTotwitter}>
           <img src={twitterIcon} alt="Twitter" className="twitter-icon" /> Post
           it on Twitter
         </button>
