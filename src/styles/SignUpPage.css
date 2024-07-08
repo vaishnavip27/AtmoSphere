@@ -14,7 +14,7 @@ body {
 /* Sign-up page container */
 
 .signup-page {
-  height: 660px;
+  height: 634px;
   width: 100%;
   max-width: 700px;
   margin: 2rem auto;
@@ -68,7 +68,7 @@ form {
 .sign-button,
 .google-signup-button {
   width: 100%;
-  height: 46px;
+  height: 40px;
   background-color: blueviolet; /* Consider using a color palette or a CSS variable */
   margin-top: 1.5rem;
   border-radius: 10px;
