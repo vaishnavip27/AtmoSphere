@@ -18,14 +18,12 @@ body {
   box-sizing: border-box;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border: 1px solid white;
 }
 
 .head-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
   width: 100%;
   text-align: center;
   padding-right: 1rem;
