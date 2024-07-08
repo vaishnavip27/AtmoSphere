@@ -14,13 +14,14 @@ body {
 /* Sign-up page container */
 
 .signup-page {
-  width: 90%;
+  width: 100%;
   max-width: 700px;
   margin: 2rem auto;
   padding: 1rem;
   box-sizing: border-box;
   border-radius: 5px; /* Optional rounded corners */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
+  border: 1px solid white;
 }
 
 /* Header container */
@@ -32,6 +33,7 @@ body {
   margin-bottom: 2rem;
   width: 100%;
   text-align: center;
+  border: 1px solid white;
 }
 
 .logo-img {
