@@ -30,8 +30,8 @@ body {
 }
 
 .logo-img {
-  width: 45px;
-  height: 45px;
+  width: 32px;
+  height: 32px;
   margin-right: 1rem;
 }
 
@@ -61,7 +61,7 @@ form {
   margin-top: 0.3rem;
   border-radius: 10px;
   color: white;
-  font-size: 18px;
+  font-size: 14px;
   cursor: pointer;
   font-weight: 600;
   border: none;
@@ -84,19 +84,19 @@ form {
   display: flex;
   align-items: center;
   color: white;
-  font-size: 17px;
+  font-size: 13px;
   margin-top: 1.2rem;
 }
 
 .remember-me input {
-  width: 20px;
-  height: 20px;
-  margin-right: 12px;
+  width: 13px;
+  height: 13px;
+  margin-right: 8px;
 }
 
 .olw {
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   margin-top: 2.1rem;
   text-align: center;
 }
