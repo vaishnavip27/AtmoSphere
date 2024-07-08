@@ -22,7 +22,6 @@ body {
   box-sizing: border-box;
   border-radius: 5px; /* Optional rounded corners */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
-  border: 1px solid white;
 }
 
 /* Header container */
@@ -34,7 +33,6 @@ body {
   margin-bottom: 2rem;
   width: 100%;
   text-align: center;
-  border: 1px solid white;
 }
 
 .logo-img {
@@ -78,8 +76,7 @@ form {
   cursor: pointer;
   font-weight: 600;
   border: none;
-  transition: background-color 0.2s ease-in-out;
-  border: 1px solid white; /* Add subtle hover effect */
+  transition: background-color 0.2s ease-in-out; /* Add subtle hover effect */
 }
 
 .sign-button:hover {
