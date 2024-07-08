@@ -8,7 +8,7 @@ export function InputWithLabel({ label, type, ...otherProps }) {
         htmlFor="{otherProps.id}"
         style={{
           color: "white",
-          fontSize: "17px",
+          fontSize: "15px",
           marginTop: "26px",
         }}
       >
@@ -17,7 +17,7 @@ export function InputWithLabel({ label, type, ...otherProps }) {
       <Input
         type={type}
         {...otherProps}
-        style={{ width: "440px", height: "40px" }}
+        style={{ width: "410px", height: "44px" }}
       />
     </div>
   );

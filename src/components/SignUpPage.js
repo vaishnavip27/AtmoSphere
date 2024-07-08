@@ -75,6 +75,7 @@ function SignUpPage() {
             value={fname}
             onChange={(e) => setFname(e.target.value)}
             required
+            className="ph-value"
           />
           <InputWithLabel
             label="Email or phone number"
@@ -84,6 +85,7 @@ function SignUpPage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            className="ph-value"
           />
           <InputWithLabel
             label="Password"
@@ -93,6 +95,7 @@ function SignUpPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            className="ph-value"
           />
 
           {error && <p className="error-message">{error}</p>}

@@ -70,6 +70,7 @@ export default function LoginPage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            className="ph-value"
           />
 
           <InputWithLabel
@@ -79,6 +80,7 @@ export default function LoginPage() {
             value={password}
             placeholder="Enter password"
             onChange={(e) => setPassword(e.target.value)}
+            className="ph-value"
           />
 
           <label className="remember-me">
