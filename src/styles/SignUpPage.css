@@ -1,55 +1,163 @@
+/* Base styles */
+
 body {
   background-color: black;
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif; /* Consider using a font stack for better compatibility */
 }
+
+/* Sign-up page container */
+
+.signup-page {
+  width: 90%;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 5px; /* Optional rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
+}
+
+/* Header container */
+
+.head-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.logo-img {
+  width: 45px;
+  height: 45px;
+  margin-right: 1rem;
+  /* Use responsive image techniques if needed (e.g., max-width) */
+}
+
+.c-text {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+/* Form container */
 
 .form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: translate(8%, -4%);
+  width: 100%;
+}
+
+form {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* Buttons */
+
+.sign-button,
+.google-signup-button {
+  width: 100%;
+  height: 54px;
+  background-color: blueviolet; /* Consider using a color palette or a CSS variable */
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px; /* Adjust font size as needed */
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  transition: background-color 0.2s ease-in-out; /* Add subtle hover effect */
+}
+
+.sign-button:hover {
+  background-color: rgb(165, 93, 232); /* Adjust hover color as needed */
+}
+
+.google-signup-button {
+  /* Customize styles for Google signup button (e.g., background image) */
+  background-color: #ffffff; /* White background for Google icon */
+  color: #333333; /* Black text color for Google icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dddddd; /* Light gray border */
+}
+
+.google-icon {
+  width: 26px;
+  height: 26px;
+  margin-right: 1rem;
+}
+
+/* Other elements */
+
+.or {
+  color: white;
+  font-size: 17px;
+  margin: 1.5rem 0;
+  text-align: center;
 }
 
 .login {
   color: white;
-  display: block;
-  width: 340px;
-  transform: translate(5%, 110%);
   font-size: 17px;
-}
-
-.login-link {
-  color: rgb(178, 0, 227);
-  text-decoration: underline;
-}
-
-.sign-button {
-  height: 54px;
-  width: 520px;
-  background-color: blueviolet;
-  margin-top: 26px;
-  border-radius: 10px;
-  font-size: 18px;
-  color: white;
-  transform: translate(-4%, 22%);
-  font-weight: 600;
+  margin-top: 1.5rem;
   text-align: center;
 }
 
-.sign-button:hover {
-  background-color: rgb(165, 93, 232);
+.login-link {
+  color: rgb(178, 0, 227); /* Adjust link color */
+  text-decoration: underline;
 }
 
-.or {
-  color: white;
-  transform: translate(52%, 1%);
-  margin-top: 24px;
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 1rem;
 }
 
-.logo-img {
-  margin-left: 138px;
-}
+/* Responsive design using media queries */
 
-.login-image {
-  margin-left: 12px;
+@media (max-width: 768px) {
+  .signup-page {
+    width: 95%;
+    margin: 1rem auto;
+  }
+
+  .head-container {
+    /* Adjust font size and margins for smaller screens */
+    font-size: 24px;
+    margin-bottom: 1rem;
+  }
+
+  .logo-img {
+    /* Adjust image size or use responsive image techniques */
+    width: 40px;
+    height: 40px;
+  }
+
+  .c-text {
+    /* Adjust font size for smaller screens */
+    font-size: 20px;
+  }
+
+  form {
+    max-width: 100%; /* Ensure form adapts to full width on mobile */
+  }
+
+  .sign-button,
+  .google-signup-button {
+    /* Adjust button height and font size for better touch targets */
+    height: 48px;
+    font-size: 16px;
+  }
 }

@@ -30,7 +30,7 @@ function SignUpPage() {
         name: fname,
       });
       console.log("User registered successfully");
-      navigate("/login"); // Redirect to login page after successful registration
+      navigate("/login");
     } catch (error) {
       setError(error.message);
       console.error("Error registering user:", error);
@@ -41,12 +41,8 @@ function SignUpPage() {
     try {
       const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
-
-      // Check if user exists in Firestore
       const userDoc = await getDoc(doc(db, "Users", user.uid));
-
       if (!userDoc.exists()) {
-        // If user doesn't exist, create a new document
         await setDoc(doc(db, "Users", user.uid), {
           email: user.email,
           name: user.displayName,
@@ -55,8 +51,7 @@ function SignUpPage() {
       } else {
         console.log("Existing user signed in with Google");
       }
-
-      navigate("/dashboard"); // Redirect to dashboard after successful Google sign-up/sign-in
+      navigate("/dashboard");
     } catch (error) {
       setError(error.message);
       console.error("Google sign-up error:", error);
@@ -64,48 +59,14 @@ function SignUpPage() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "flex-end",
-        flexDirection: "column",
-        marginLeft: "470px",
-        width: "700px",
-        height: "700px",
-        marginTop: "40px",
-      }}
-    >
-      <div
-        className="head-container"
-        style={{ transform: "translate(0%,-50%)", display: "flex" }}
-      >
-        <img
-          src={GenieIcon}
-          alt="head-icon"
-          style={{
-            marginRight: "24px",
-            height: "45px",
-            width: "45px",
-            transform: "translateX(12px)",
-          }}
-          className="logo-img"
-        />
-        <span
-          className="c-text"
-          style={{
-            color: "white",
-            fontSize: "30px",
-            fontWeight: "600",
-            marginTop: "3px",
-            transform: "translateX(8px)",
-          }}
-        >
-          GiggleGenie
-        </span>
+    <div className="signup-page">
+      <div className="head-container">
+        <img src={GenieIcon} alt="head-icon" className="logo-img" />
+        <span className="c-text">GiggleGenie</span>
       </div>
 
       <div className="form-container">
-        <form onSubmit={handleRegister} style={{ marginLeft: "70px" }}>
+        <form onSubmit={handleRegister}>
           <InputWithLabel
             label="Name"
             type="text"
@@ -115,7 +76,6 @@ function SignUpPage() {
             onChange={(e) => setFname(e.target.value)}
             required
           />
-
           <InputWithLabel
             label="Email or phone number"
             type="email"
@@ -125,7 +85,6 @@ function SignUpPage() {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-
           <InputWithLabel
             label="Password"
             type="password"
@@ -136,7 +95,7 @@ function SignUpPage() {
             required
           />
 
-          {error && <p style={{ color: "red" }}>{error}</p>}
+          {error && <p className="error-message">{error}</p>}
 
           <button type="submit" className="sign-button">
             Sign up
@@ -145,31 +104,9 @@ function SignUpPage() {
 
         <div className="or">or</div>
 
-        <button
-          onClick={handleGoogleSignUp}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            border: "1px solid white",
-            width: "520px",
-            height: "54px",
-            transform: "translate(2%,16%)",
-            backgroundColor: "black",
-          }}
-        >
-          <img
-            className="logo-image"
-            src={GoogleIcon}
-            alt="Logo"
-            style={{ marginRight: "19px", height: "26px", width: "26px" }}
-          />
-          <span
-            className="b-text"
-            style={{ color: "white", fontSize: "17px", marginRight: "8px" }}
-          >
-            Sign up with Google
-          </span>
+        <button onClick={handleGoogleSignUp} className="google-signup-button">
+          <img className="google-icon" src={GoogleIcon} alt="Google Logo" />
+          <span>Sign up with Google</span>
         </button>
 
         <span className="login">

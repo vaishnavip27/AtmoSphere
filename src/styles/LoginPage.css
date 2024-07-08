@@ -1,56 +1,151 @@
 body {
   background-color: black;
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.login-page {
+  width: 90%;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.head-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.logo-img {
+  width: 45px;
+  height: 45px;
+  margin-right: 24px;
+}
+
+.c-text {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: translate(8%, -4%);
-  width: 600px;
+  width: 100%;
 }
 
-.head-container {
-  height: 70px;
-  width: 600px;
-  margin-left: 50px;
+form {
+  width: 100%;
+  max-width: 520px;
 }
 
-.login-button {
+.login-button,
+.google-signin-button {
+  width: 100%;
   height: 54px;
-  width: 520px;
   background-color: blueviolet;
-  margin-top: 18px;
+  margin-top: 1rem;
   border-radius: 10px;
   color: white;
   font-size: 18px;
   cursor: pointer;
   font-weight: 600;
-  transform: translate(-4%, 48%);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-button:hover {
   background-color: rgb(162, 94, 226);
 }
 
+.remember-me {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 17px;
+  margin-top: 1rem;
+}
+
+.remember-me input {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+}
+
 .olw {
   color: white;
   font-size: 17px;
-  margin-top: 48px;
-  margin-left: 18px;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.google-signin-button {
+  background-color: black;
+  border: 1px solid white;
+}
+
+.google-icon {
+  width: 26px;
+  height: 26px;
+  margin-right: 16px;
 }
 
 .sign {
   color: white;
   font-size: 17px;
-  padding-top: 28px;
-  margin-top: 12px;
-  display: block;
-  width: 330px;
+  margin-top: 1.5rem;
+  text-align: center;
 }
 
 .registerLink {
   color: rgb(127, 0, 201);
   text-decoration: underline;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .login-page {
+    width: 95%;
+    margin: 1rem auto;
+  }
+
+  .c-text {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    width: 100%;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+  }
+
+  .c-text {
+    font-size: 20px;
+  }
+
+  .login-button,
+  .google-signin-button {
+    height: 48px;
+    font-size: 16px;
+  }
 }

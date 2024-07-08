@@ -37,11 +37,9 @@ export default function LoginPage() {
       const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
 
-      // Check if user exists in Firestore
       const userDoc = await getDoc(doc(db, "Users", user.uid));
 
       if (!userDoc.exists()) {
-        // If user doesn't exist, create a new document
         await setDoc(doc(db, "Users", user.uid), {
           email: user.email,
           name: user.displayName,
@@ -57,47 +55,13 @@ export default function LoginPage() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "flex-end",
-        flexDirection: "column",
-        marginLeft: "470px",
-        height: "630px",
-        width: "700px",
-        marginTop: "100px",
-      }}
-    >
-      <div
-        className="head-container"
-        style={{ transform: "translate(0%,-50%)", display: "flex" }}
-      >
-        <img
-          src={GenieIcon}
-          alt="head-icon"
-          style={{
-            marginRight: "24px",
-            height: "45px",
-            width: "45px",
-            transform: "translateX(12px)",
-          }}
-          className="logo-img"
-        />
-        <span
-          className="c-text"
-          style={{
-            color: "white",
-            fontSize: "30px",
-            fontWeight: "600",
-            marginTop: "3px",
-            transform: "translateX(8px)",
-          }}
-        >
-          GiggleGenie
-        </span>
+    <div className="login-page">
+      <div className="head-container">
+        <img src={GenieIcon} alt="head-icon" className="logo-img" />
+        <span className="c-text">GiggleGenie</span>
       </div>
-      <div class="form-container">
-        <form onSubmit={handleSubmit} style={{ marginLeft: "70px" }}>
+      <div className="form-container">
+        <form onSubmit={handleSubmit}>
           <InputWithLabel
             label="Email"
             type="email"
@@ -105,7 +69,6 @@ export default function LoginPage() {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            style={{ marginLeft: "28px" }}
             required
           />
 
@@ -116,34 +79,18 @@ export default function LoginPage() {
             value={password}
             placeholder="Enter password"
             onChange={(e) => setPassword(e.target.value)}
-            style={{ marginLeft: "20px" }}
           />
 
-          <label
-            style={{
-              display: "flex",
-              alignItems: "center",
-              color: "white",
-              fontSize: "17px",
-              transform: "translate(-4%,90%)",
-              // marginLeft: "150px",
-              // marginTop: "24px",
-            }}
-          >
+          <label className="remember-me">
             <input
               type="checkbox"
               checked={rememberMe}
               onChange={(e) => setRememberMe(e.target.checked)}
-              style={{
-                width: "20px",
-                height: "20px",
-                marginRight: "12px",
-              }}
             />
             Remember me
           </label>
 
-          {error && <p style={{ color: "red" }}>{error}</p>}
+          {error && <p className="error-message">{error}</p>}
 
           <button type="submit" className="login-button">
             Log In
@@ -152,29 +99,9 @@ export default function LoginPage() {
 
         <div className="olw">Or login with</div>
 
-        <button
-          className="logo-img"
-          onClick={handleGoogleSignIn}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            border: "1px solid white",
-            width: "520px",
-            height: "54px",
-            transform: "translate(-11%,34%)",
-            backgroundColor: "black",
-          }}
-        >
-          <img
-            src={GoogleIcon}
-            alt="Logo"
-            style={{ marginRight: "16px", height: "26px", width: "26px" }}
-            className="logo-img"
-          />
-          <span className="b-text" style={{ color: "white", fontSize: "17px" }}>
-            Sign in with Google
-          </span>
+        <button className="google-signin-button" onClick={handleGoogleSignIn}>
+          <img src={GoogleIcon} alt="Google Logo" className="google-icon" />
+          <span>Sign in with Google</span>
         </button>
 
         <span className="sign">
