@@ -69,7 +69,7 @@ form {
 .sign-button,
 .google-signup-button {
   width: 100%;
-  height: 54px;
+  height: 50px;
   background-color: blueviolet; /* Consider using a color palette or a CSS variable */
   margin-top: 1.5rem;
   border-radius: 10px;
@@ -78,7 +78,8 @@ form {
   cursor: pointer;
   font-weight: 600;
   border: none;
-  transition: background-color 0.2s ease-in-out; /* Add subtle hover effect */
+  transition: background-color 0.2s ease-in-out;
+  border: 1px solid white; /* Add subtle hover effect */
 }
 
 .sign-button:hover {
@@ -87,13 +88,13 @@ form {
 
 .google-signup-button {
   /* Customize styles for Google signup button (e.g., background image) */
-  background-color: #ffffff; /* White background for Google icon */
-  color: #333333; /* Black text color for Google icon */
+  background-color: black; /* White background for Google icon */
+  color: white; /* Black text color for Google icon */
   display: flex;
-  margin-top: -35px;
+  margin-top: -42px;
   align-items: center;
   justify-content: center;
-  border: 1px solid #dddddd; /* Light gray border */
+  border: 1px solid white; /* Light gray border */
 }
 
 .google-icon {
@@ -114,7 +115,7 @@ form {
 .login {
   color: white;
   font-size: 17px;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   text-align: center;
 }
 

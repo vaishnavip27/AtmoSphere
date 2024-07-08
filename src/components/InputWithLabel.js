@@ -17,7 +17,7 @@ export function InputWithLabel({ label, type, ...otherProps }) {
       <Input
         type={type}
         {...otherProps}
-        style={{ height: "54px", width: "480px" }}
+        style={{ width: "480px", height: "50px" }}
       />
     </div>
   );
