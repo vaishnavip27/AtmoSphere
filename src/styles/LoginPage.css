@@ -83,6 +83,7 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .login-button::before,
@@ -105,7 +106,7 @@ form {
 
 .login-button::after {
   background: linear-gradient(to right, #4c007f, #9d08d0);
-  opacity: 0; /* Initially hidden */
+  opacity: 0;
 }
 
 .login-button:hover::before {

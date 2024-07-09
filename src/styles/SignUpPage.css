@@ -91,6 +91,7 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .sign-button::before,
