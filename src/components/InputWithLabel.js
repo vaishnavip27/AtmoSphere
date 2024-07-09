@@ -20,8 +20,8 @@ export function InputWithLabel({ label, type, ...otherProps }) {
         style={{
           width: "410px",
           height: "43px",
-          border: "1px solid gray",
-          className: "glowing-input",
+          border: "1px solid rgb(37,37,37)",
+          backgroundColor: "rgb(10,10,10)",
         }}
       />
     </div>
