@@ -61,9 +61,9 @@ form {
   margin-top: 0.3rem;
   border-radius: 10px;
   color: white;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 500;
   border: none;
   display: flex;
   align-items: center;
@@ -104,7 +104,6 @@ form {
 .google-icon {
   width: 26px;
   height: 26px;
-  margin-right: 16px;
 }
 
 .sign {

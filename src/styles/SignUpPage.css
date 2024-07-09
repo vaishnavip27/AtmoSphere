@@ -72,15 +72,21 @@ form {
   margin-top: 1.5rem;
   border-radius: 10px;
   color: white;
-  font-size: 18px; /* Adjust font size as needed */
+  font-size: 16px; /* Adjust font size as needed */
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 500;
   border: none;
   transition: background-color 0.2s ease-in-out; /* Add subtle hover effect */
 }
 
 .sign-button:hover {
   background-color: rgb(165, 93, 232); /* Adjust hover color as needed */
+}
+
+.sign-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .google-signup-button {
@@ -108,14 +114,14 @@ form {
 
 .or {
   color: white;
-  font-size: 17px;
+  font-size: 16px;
   margin: 1.7rem 0;
   text-align: center;
 }
 
 .login {
   color: white;
-  font-size: 17px;
+  font-size: 16px;
   margin-top: 2.3rem;
   text-align: center;
 }
