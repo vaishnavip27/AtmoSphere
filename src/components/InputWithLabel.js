@@ -17,7 +17,12 @@ export function InputWithLabel({ label, type, ...otherProps }) {
       <Input
         type={type}
         {...otherProps}
-        style={{ width: "410px", height: "43px" }}
+        style={{
+          width: "410px",
+          height: "43px",
+          border: "1px solid gray",
+          className: "glowing-input",
+        }}
       />
     </div>
   );

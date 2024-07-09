@@ -109,7 +109,7 @@ function SignUpPage() {
 
         <button onClick={handleGoogleSignUp} className="google-signup-button">
           <img className="google-icon" src={GoogleIcon} alt="Google Logo" />
-          <span>Sign up with Google</span>
+          <span className="tt">Sign up with Google</span>
         </button>
 
         <span className="login">

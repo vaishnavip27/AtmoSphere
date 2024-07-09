@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/LoginPage.css";
 import { InputWithLabel } from "./InputWithLabel";
 import GenieIcon from "../pictures/genie.png";
@@ -11,13 +11,36 @@ import { doc, setDoc, getDoc } from "firebase/firestore";
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(true);
+  const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedEmail = localStorage.getItem("email");
+    const storedPassword = localStorage.getItem("password");
+    const storedRememberMe = localStorage.getItem("rememberMe") === "true";
+
+    if (storedRememberMe) {
+      setEmail(storedEmail || "");
+      setPassword(storedPassword || "");
+      setRememberMe(true);
+    }
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+
+    if (rememberMe) {
+      localStorage.setItem("email", email);
+      localStorage.setItem("password", password);
+      localStorage.setItem("rememberMe", true);
+    } else {
+      localStorage.removeItem("email");
+      localStorage.removeItem("password");
+      localStorage.removeItem("rememberMe");
+    }
+
     try {
       const userCredential = await signInWithEmailAndPassword(
         auth,

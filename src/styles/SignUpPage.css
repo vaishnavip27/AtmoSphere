@@ -97,13 +97,17 @@ form {
   margin-top: -42px;
   align-items: center;
   justify-content: center;
-  border: 1px solid white; /* Light gray border */
+  border: 1px solid gray; /* Light gray border */
+}
+
+.tt {
+  color: rgb(224, 224, 224);
 }
 
 .google-icon {
-  width: 26px;
-  height: 26px;
-  margin-right: 1rem;
+  width: 24px;
+  height: 24px;
+  margin-right: 0.7rem;
 }
 
 .ph-value {
@@ -113,14 +117,14 @@ form {
 /* Other elements */
 
 .or {
-  color: white;
+  color: rgb(220, 220, 220);
   font-size: 16px;
   margin: 1.7rem 0;
   text-align: center;
 }
 
 .login {
-  color: white;
+  color: rgb(232, 232, 232);
   font-size: 16px;
   margin-top: 2.3rem;
   text-align: center;
@@ -135,6 +139,7 @@ form {
   color: red;
   text-align: center;
   margin-top: 1rem;
+  font-size: 15px;
 }
 
 /* Responsive design using media queries */
