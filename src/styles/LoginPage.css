@@ -84,13 +84,13 @@ form {
   display: flex;
   align-items: center;
   color: white;
-  font-size: 13px;
+  font-size: 14px;
   margin-top: 1.2rem;
 }
 
 .remember-me input {
-  width: 13px;
-  height: 13px;
+  width: 14px;
+  height: 14px;
   margin-right: 8px;
 }
 
@@ -115,7 +115,7 @@ form {
 }
 
 .ph-value::placeholder {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .registerLink {

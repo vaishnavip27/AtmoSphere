@@ -8,7 +8,7 @@ export function InputWithLabel({ label, type, ...otherProps }) {
         htmlFor="{otherProps.id}"
         style={{
           color: "white",
-          fontSize: "12px",
+          fontSize: "14px",
           marginTop: "26px",
         }}
       >
