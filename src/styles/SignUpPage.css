@@ -64,40 +64,81 @@ form {
 
 /* Buttons */
 
-.sign-button,
 .google-signup-button {
   width: 100%;
   height: 43px;
-  background-color: blueviolet; /* Consider using a color palette or a CSS variable */
   margin-top: 1.5rem;
   border-radius: 10px;
   color: white;
-  font-size: 16px; /* Adjust font size as needed */
+  font-size: 16px;
   cursor: pointer;
   font-weight: 500;
   border: none;
-  transition: background-color 0.2s ease-in-out; /* Add subtle hover effect */
-}
-
-.sign-button:hover {
-  background-color: rgb(165, 93, 232); /* Adjust hover color as needed */
 }
 
 .sign-button {
+  width: 100%;
+  height: 43px;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 25px;
+  margin-top: 1rem;
+  background: #4c007f; /* Set a base background color */
+  position: relative; /* Needed for pseudo-element positioning */
+  padding: 10px 20px; /* Adjust padding as needed */
+  color: #fff; /* Text color */
+  cursor: pointer; /* Indicate hover interaction */
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+
+.sign-button::before,
+.sign-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: 100%; /* Ensure full button coverage */
+  transition: opacity 0.3s ease-in-out; /* Set smooth transition */
+  z-index: -1;
+}
+
+.sign-button::before {
+  background: linear-gradient(to right, #9d08d8, #4c007f);
+  opacity: 1; /* Initially visible */
+}
+
+.sign-button::after {
+  background: linear-gradient(to right, #4c007f, #9d08d0);
+  opacity: 0; /* Initially hidden */
+}
+
+.sign-button:hover::before {
+  opacity: 0;
+}
+
+.sign-button:hover::after {
+  opacity: 1;
+}
+
+.sign-button span {
+  display: block;
+  text-align: center;
+  line-height: normal;
+  z-index: 1;
 }
 
 .google-signup-button {
-  /* Customize styles for Google signup button (e.g., background image) */
-  background-color: black; /* White background for Google icon */
-  color: white; /* Black text color for Google icon */
+  background-color: black;
+  color: white;
   display: flex;
   margin-top: -42px;
   align-items: center;
   justify-content: center;
-  border: 1px solid gray; /* Light gray border */
+  border: 1px solid gray;
 }
 
 .tt {
@@ -131,8 +172,9 @@ form {
 }
 
 .login-link {
-  color: rgb(178, 0, 227); /* Adjust link color */
+  color: #b90efd; /* Adjust link color */
   text-decoration: underline;
+  font-weight: 600;
 }
 
 .error-message {

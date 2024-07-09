@@ -53,13 +53,11 @@ form {
   max-width: 520px;
 }
 
-.login-button,
 .google-signin-button {
   width: 100%;
   height: 43px;
-  background-color: blueviolet;
   margin-top: 0.3rem;
-  border-radius: 10px;
+  border-radius: 25px;
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -70,14 +68,65 @@ form {
   justify-content: center;
 }
 
+.login-button {
+  width: 100%;
+  height: 43px;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 25px;
+  margin-top: 1rem;
+  background: #4c007f; /* Set a base background color */
+  position: relative; /* Needed for pseudo-element positioning */
+  padding: 10px 20px; /* Adjust padding as needed */
+  color: #fff; /* Text color */
+  cursor: pointer; /* Indicate hover interaction */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-button::before,
+.login-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: 100%; /* Ensure full button coverage */
+  transition: opacity 0.3s ease-in-out; /* Set smooth transition */
+  z-index: -1;
+}
+
+.login-button::before {
+  background: linear-gradient(to right, #9d08d8, #4c007f);
+  opacity: 1; /* Initially visible */
+}
+
+.login-button::after {
+  background: linear-gradient(to right, #4c007f, #9d08d0);
+  opacity: 0; /* Initially hidden */
+}
+
+.login-button:hover::before {
+  opacity: 0;
+}
+
+.login-button:hover::after {
+  opacity: 1;
+}
+
+.login-button span {
+  display: block;
+  text-align: center;
+  line-height: normal;
+  z-index: 1;
+}
+
 .google-signin-button {
   margin-top: -0.2rem;
   background-color: black;
   border: 1px solid gray;
-}
-
-.login-button:hover {
-  background-color: rgb(162, 94, 226);
 }
 
 .remember-me {
@@ -119,8 +168,9 @@ form {
 }
 
 .registerLink {
-  color: rgb(127, 0, 201);
+  color: #b90efd;
   text-decoration: underline;
+  font-weight: 600;
 }
 
 .error-message {
