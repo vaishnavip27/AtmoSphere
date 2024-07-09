@@ -135,14 +135,38 @@ form {
   display: flex;
   align-items: center;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   margin-top: 1.2rem;
+  cursor: pointer;
 }
 
 .remember-me input {
-  width: 16px;
-  height: 16px;
+  display: none;
+}
+
+.remember-me .custom-checkbox {
+  width: 15px;
+  height: 15px;
   margin-right: 8px;
+  background-color: black;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.remember-me .custom-checkbox::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: white; /* Color when checked */
+  display: none;
+  position: absolute;
+}
+
+.remember-me input:checked + .custom-checkbox::after {
+  display: block;
 }
 
 .olw {

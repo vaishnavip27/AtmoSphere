@@ -112,6 +112,7 @@ export default function LoginPage() {
               checked={rememberMe}
               onChange={(e) => setRememberMe(e.target.checked)}
             />
+            <span className="custom-checkbox"></span>
             Remember me
           </label>
 

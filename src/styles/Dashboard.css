@@ -4,25 +4,25 @@ body {
 
 .container {
   height: 420px;
-  max-width: 650px;
-  width: 90%;
-  background-color: rgb(22, 22, 22);
+  max-width: 680px;
+  width: 98%;
+  background-color: rgb(10, 10, 10);
   border-radius: 12px;
-  transform: translate(-0%, 48%);
+  transform: translate(0%, 4%);
   padding: 3rem;
   display: flex;
   flex-direction: column;
-  border: 1px solid rgb(145, 145, 145);
+  border: 1px solid rgb(37, 37, 37);
 }
 
 .head {
-  font-size: 25px;
+  font-size: 24px;
   max-width: 610px;
-  transform: translate(-0%, -120%);
-  margin-top: 32px;
+  margin-top: -30px;
   color: white;
   text-align: center;
-  font-weight: 700;
+  border: 1px solid white;
+  font-weight: 600;
 }
 
 .joke {
@@ -30,7 +30,7 @@ body {
   max-width: 610px;
   color: white;
   font-size: 19px;
-  transform: translate(0%, -6%);
+  margin-top: 1.8rem;
   background-color: rgb(91, 91, 91);
   border-radius: 8px;
   padding: 18px;
@@ -43,29 +43,65 @@ body {
   gap: 10px;
 }
 
-button {
-  padding: 14px 68px;
+.btn {
+  height: 2.5rem;
+  width: 12rem;
   font-size: 16px;
+  margin-top: 1.8rem;
   cursor: pointer;
   border: none;
-  border-radius: 9px;
+  border-radius: 4px;
   background-color: rgb(127, 0, 201);
   color: white;
   display: flex;
   align-items: center;
-  transform: translateY(22px);
+  justify-content: center;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
 }
 
-button:hover {
-  background-color: rgb(67, 2, 105);
+.btn::before,
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: 100%; /* Ensure full button coverage */
+  transition: opacity 0.3s ease-in-out; /* Set smooth transition */
+  z-index: 0;
 }
 
-button:focus {
-  outline: none;
+.btn::before {
+  background: linear-gradient(to right, #9d08d8, #4c007f);
+  opacity: 1; /* Initially visible */
+}
+
+.btn::after {
+  background: linear-gradient(to right, #4c007f, #9d08d0);
+  opacity: 0;
+}
+
+.btn:hover::before {
+  opacity: 0;
+}
+
+.btn:hover::after {
+  opacity: 1;
+}
+
+.btn span {
+  position: relative;
+  display: block;
+  text-align: center;
+  line-height: normal;
+  z-index: 1;
 }
 
 .twitter-icon {
-  width: 20px; /* Adjust size as needed */
-  height: 20px; /* Adjust size as needed */
+  width: 20px; 
+  height: 20px; 
   margin-right: 8px;
 }

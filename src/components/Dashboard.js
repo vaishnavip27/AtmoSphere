@@ -59,8 +59,10 @@ export default function Dashboard() {
       <div className="head">Hey {userName}, here is your joke</div>
       <div className="joke">{joke}</div>
       <div className="button-container">
-        <button onClick={fetchJoke}>Get a joke</button>
-        <button onClick={postTotwitter}>
+        <button onClick={fetchJoke} className="btn">
+          Get a joke
+        </button>
+        <button onClick={postTotwitter} className="btn">
           <img src={twitterIcon} alt="Twitter" className="twitter-icon" /> Post
           it on Twitter
         </button>
