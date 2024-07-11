@@ -73,7 +73,11 @@ body {
 
 @media (max-width: 680px) {
   .container {
-    padding: 1.4rem;
+    padding: 1.6rem;
+  }
+
+  .head {
+    margin-top: 1rem;
   }
 
   .joke {
