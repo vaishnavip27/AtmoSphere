@@ -171,3 +171,38 @@ form {
   margin-top: 1rem;
   font-size: 15px;
 }
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  .login-page {
+    padding: 1rem;
+  }
+
+  .logo-img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .c-text {
+    font-size: 22px;
+  }
+
+  .google-signin-button,
+  .login-button {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .remember-me {
+    font-size: 14px;
+  }
+
+  .olw,
+  .sign {
+    font-size: 14px;
+  }
+
+  .error-message {
+    font-size: 14px;
+  }
+}
