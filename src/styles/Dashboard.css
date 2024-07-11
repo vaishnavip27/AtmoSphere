@@ -73,7 +73,7 @@ body {
 
 @media (max-width: 680px) {
   .container {
-    padding: 1.5rem;
+    padding: 1.4rem;
   }
 
   .joke {
@@ -81,13 +81,13 @@ body {
   }
 
   .button-container {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 
   .btn {
     width: 100%;
-    max-width: 12rem;
+    max-width: 10rem;
     margin-bottom: 0.5rem;
   }
 }
