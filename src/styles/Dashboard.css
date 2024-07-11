@@ -70,28 +70,3 @@ body {
   height: 14px;
   margin-right: 8px;
 }
-
-@media (max-width: 680px) {
-  .container {
-    padding: 1.6rem;
-  }
-
-  .head {
-    margin-top: 1rem;
-  }
-
-  .joke {
-    padding: 12px;
-  }
-
-  .button-container {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .btn {
-    width: 100%;
-    max-width: 10rem;
-    margin-bottom: 0.5rem;
-  }
-}

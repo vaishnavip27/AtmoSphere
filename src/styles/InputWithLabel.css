@@ -22,20 +22,3 @@
   padding: 0 10px;
   box-sizing: border-box;
 }
-
-@media (max-width: 480px) {
-  .input-with-label {
-    max-width: 100%;
-  }
-
-  .input-label {
-    font-size: 14px;
-    margin-top: 20px;
-  }
-
-  .input-field {
-    height: 40px;
-    width: 400px;
-    font-size: 14px;
-  }
-}
