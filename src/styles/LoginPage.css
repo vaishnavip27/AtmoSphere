@@ -56,16 +56,15 @@ form {
 .google-signin-button {
   width: 100%;
   height: 43px;
-  margin-top: 0.3rem;
+  margin-top: 1rem;
   color: white;
   font-size: 16px;
+  border-radius: 10px;
   cursor: pointer;
   font-weight: 500;
-  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -0.2rem;
   background-color: rgb(10, 10, 10);
   border: 1px solid rgb(37, 37, 37);
 }
@@ -80,8 +79,9 @@ form {
   height: 43px;
   cursor: pointer;
   font-weight: 500;
+  font-size: 16px;
   border-radius: 25px;
-  margin-top: 0.1rem;
+  margin-top: 1.2rem;
   background: #4c007f; /* Set a base background color */
   position: relative; /* Needed for pseudo-element positioning */
   padding: 10px 20px; /* Adjust padding as needed */
@@ -136,7 +136,8 @@ form {
   align-items: center;
   color: white;
   font-size: 14px;
-  margin-top: 1.2rem;
+  margin-top: 1rem;
+  margin-left: 0.2rem;
   cursor: pointer;
 }
 
@@ -172,7 +173,7 @@ form {
 .olw {
   color: rgb(233, 233, 233);
   font-size: 15px;
-  margin-top: 2.1rem;
+  margin-top: 1.2rem;
   text-align: center;
 }
 
@@ -184,8 +185,8 @@ form {
 
 .sign {
   color: rgb(232, 232, 232);
-  font-size: 16px;
-  margin-top: 2.3rem;
+  font-size: 15px;
+  margin-top: 0.9rem;
   text-align: center;
 }
 
