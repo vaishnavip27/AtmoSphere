@@ -142,6 +142,7 @@ form {
 .login-link {
   color: #b90efd; /* Adjust link color */
   text-decoration: underline;
+  font-size: 15px;
 }
 
 .error-message {
@@ -149,41 +150,4 @@ form {
   text-align: center;
   margin-top: 1rem;
   font-size: 15px;
-}
-
-/* Responsive design using media queries */
-
-@media (max-width: 768px) {
-  .signup-page {
-    width: 95%;
-    margin: 1rem auto;
-  }
-
-  .head-container {
-    /* Adjust font size and margins for smaller screens */
-    font-size: 24px;
-    margin-bottom: 1rem;
-  }
-
-  .logo-img {
-    /* Adjust image size or use responsive image techniques */
-    width: 40px;
-    height: 40px;
-  }
-
-  .c-text {
-    /* Adjust font size for smaller screens */
-    font-size: 20px;
-  }
-
-  form {
-    max-width: 100%; /* Ensure form adapts to full width on mobile */
-  }
-
-  .sign-button,
-  .google-signup-button {
-    /* Adjust button height and font size for better touch targets */
-    height: 48px;
-    font-size: 16px;
-  }
 }
