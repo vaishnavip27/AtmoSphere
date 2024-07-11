@@ -30,14 +30,13 @@ body {
 }
 
 .logo-img {
-  width: 32px;
-  height: 32px;
-  margin-right: 1rem;
+  width: 38px;
+  height: 38px;
 }
 
 .c-text {
   color: rgb(215, 215, 215);
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 600;
 }
 
