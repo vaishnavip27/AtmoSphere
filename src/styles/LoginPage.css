@@ -81,7 +81,7 @@ form {
   font-size: 16px;
   border-radius: 25px;
   margin-top: 1.2rem;
-  background: #4c007f;
+  background-color: #6700ab;
   position: relative;
   padding: 10px 20px;
   color: #fff;
@@ -90,44 +90,11 @@ form {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transition: transform 0.3s ease-in-out;
 }
 
-.login-button::before,
-.login-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: 100%; /* Ensure full button coverage */
-  transition: opacity 0.3s ease-in-out; /* Set smooth transition */
-  z-index: -1;
-}
-
-.login-button::before {
-  background: linear-gradient(to right, #9d08d8, #4c007f);
-  opacity: 1; /* Initially visible */
-}
-
-.login-button::after {
-  background: linear-gradient(to right, #4c007f, #9d08d0);
-  opacity: 0;
-}
-
-.login-button:hover::before {
-  opacity: 0;
-}
-
-.login-button:hover::after {
-  opacity: 1;
-}
-
-.login-button span {
-  display: block;
-  text-align: center;
-  line-height: normal;
-  z-index: 1;
+.login-button:hover {
+  background-color: #4c0075;
 }
 
 .remember-me {

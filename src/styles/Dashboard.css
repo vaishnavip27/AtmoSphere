@@ -5,7 +5,7 @@ body {
 .container {
   height: 420px;
   max-width: 680px;
-  width: 98%;
+  width: 100%;
   background-color: rgb(10, 10, 10);
   border-radius: 12px;
   transform: translate(0%, 4%);
@@ -16,22 +16,22 @@ body {
 }
 
 .head {
-  font-size: 24px;
+  font-size: 20px;
   max-width: 610px;
-  margin-top: -30px;
+  margin-top: -25px;
   color: white;
   text-align: center;
-  border: 1px solid white;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .joke {
-  height: 160px;
+  height: 190px;
   max-width: 610px;
-  color: white;
-  font-size: 19px;
+  color: rgb(151, 151, 151);
+  font-size: 17px;
   margin-top: 1.8rem;
-  background-color: rgb(91, 91, 91);
+  background-color: rgb(20, 20, 20);
+  border: 1px solid rgb(37, 37, 37);
   border-radius: 8px;
   padding: 18px;
   font-weight: 500;
@@ -47,61 +47,26 @@ body {
   height: 2.5rem;
   width: 12rem;
   font-size: 16px;
-  margin-top: 1.8rem;
+  margin-top: 1.9rem;
   cursor: pointer;
   border: none;
-  border-radius: 4px;
-  background-color: rgb(127, 0, 201);
+  border-radius: 8px;
+  background-color: #6700ab;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: 500;
   position: relative;
   overflow: hidden;
 }
 
-.btn::before,
-.btn::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: 100%; /* Ensure full button coverage */
-  transition: opacity 0.3s ease-in-out; /* Set smooth transition */
-  z-index: 0;
-}
-
-.btn::before {
-  background: linear-gradient(to right, #9d08d8, #4c007f);
-  opacity: 1; /* Initially visible */
-}
-
-.btn::after {
-  background: linear-gradient(to right, #4c007f, #9d08d0);
-  opacity: 0;
-}
-
-.btn:hover::before {
-  opacity: 0;
-}
-
-.btn:hover::after {
-  opacity: 1;
-}
-
-.btn span {
-  position: relative;
-  display: block;
-  text-align: center;
-  line-height: normal;
-  z-index: 1;
+.btn:hover {
+  background-color: #4c0075;
 }
 
 .twitter-icon {
-  width: 20px; 
-  height: 20px; 
+  width: 14px;
+  height: 14px;
   margin-right: 8px;
 }

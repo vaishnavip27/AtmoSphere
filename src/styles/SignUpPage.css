@@ -94,7 +94,7 @@ form {
   font-weight: 500;
   border-radius: 25px;
   margin-top: 1.5rem;
-  background: #4c007f; /* Set a base background color */
+  background-color: #6700ab; /* Set a base background color */
   position: relative; /* Needed for pseudo-element positioning */
   padding: 10px 20px; /* Adjust padding as needed */
   color: #fff; /* Text color */
@@ -105,42 +105,8 @@ form {
   overflow: hidden;
 }
 
-.sign-button::before,
-.sign-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: 100%; /* Ensure full button coverage */
-  transition: opacity 0.3s ease-in-out; /* Set smooth transition */
-  z-index: -1;
-}
-
-.sign-button::before {
-  background: linear-gradient(to right, #9d08d8, #4c007f);
-  opacity: 1; /* Initially visible */
-}
-
-.sign-button::after {
-  background: linear-gradient(to right, #4c007f, #9d08d0);
-  opacity: 0; /* Initially hidden */
-}
-
-.sign-button:hover::before {
-  opacity: 0;
-}
-
-.sign-button:hover::after {
-  opacity: 1;
-}
-
-.sign-button span {
-  display: block;
-  text-align: center;
-  line-height: normal;
-  z-index: 1;
+.sign-button:hover {
+  background-color: #4c007f;
 }
 
 .tt {

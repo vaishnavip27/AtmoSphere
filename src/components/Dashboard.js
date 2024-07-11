@@ -49,7 +49,7 @@ export default function Dashboard() {
 
   const postTotwitter = () => {
     const tweetText = encodeURIComponent(
-      `${joke}\n\n~ GiggleGenie made by Vaishnavi`
+      `${joke}\n\n~ GiggleGenie made by Vaishnavi♡`
     );
     const twitterUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
     window.open(twitterUrl, "_blank");
