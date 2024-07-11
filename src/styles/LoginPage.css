@@ -181,6 +181,7 @@ form {
   .google-signin-button,
   .login-button {
     font-size: 14px;
+    width: 400px;
   }
 
   .remember-me,
