@@ -134,8 +134,8 @@ form {
   display: flex;
   align-items: center;
   color: white;
-  font-size: 14px;
-  margin-top: 1rem;
+  font-size: 15px;
+  margin-top: 1.1rem;
   margin-left: 0.2rem;
   cursor: pointer;
 }
